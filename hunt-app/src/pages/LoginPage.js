@@ -64,7 +64,22 @@ export default class LoginPage extends React.Component {
             </Card>
           </Col>
         </Row>
-        <LoginForm onSubmit={this.onFormSubmit.bind(this)} />
+        
+
+        <LoginForm onSubmit={this.onFormSubmit.bind(this)}>
+  <p>
+    <input type="text" name="username" placeholder="Username" />
+  </p>
+  <p>
+    <input type="password" name="password" placeholder="Password" />
+  </p>
+  <p spIf="form.error">
+    <strong>Error:</strong> <span spBind="form.errorMessage" />
+  </p>
+  <p>
+    <input type="submit" value="Login" />
+  </p>
+</LoginForm>
       </Row>
     );
   }
