@@ -3,6 +3,8 @@ import DocumentTitle from 'react-document-title';
 import { LoginForm } from 'react-stormpath';
 import {Button, Icon, Row, Input, Col, Card} from 'react-materialize';
 import { Link } from 'react-router';
+import Form from 'react-formal';
+import yup from 'yup'
 
 export default class LoginPage extends React.Component {
 
@@ -64,7 +66,7 @@ export default class LoginPage extends React.Component {
             </Card>
           </Col>
         </Row>
-        
+
 
         <LoginForm onSubmit={this.onFormSubmit.bind(this)}>
   <p>
