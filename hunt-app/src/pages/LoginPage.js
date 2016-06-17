@@ -24,10 +24,10 @@ export default class LoginPage extends React.Component {
 
   render() {
     return (
-      <Row>
+      <Row className="parallax2">
         <Row>
           <div>
-            <h2> Account Access </h2>
+            <h2> Start Your Adventure Here! </h2>
           </div>
         </Row>
         <Row>
