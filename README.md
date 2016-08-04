@@ -1,4 +1,4 @@
-# Scvng'r 
+# Troviamo 
 
 Group project from quarter 3 at Galvanize! 
 
