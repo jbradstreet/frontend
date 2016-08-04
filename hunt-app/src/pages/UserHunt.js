@@ -30,7 +30,6 @@ export default class UserHunt extends Component {
     "width": `400px`,
     "background-color": `white`,
   }
-
   state = {
     bounds: null,
     center: null,
@@ -39,7 +38,6 @@ export default class UserHunt extends Component {
     markers: [],
     hide: false,
   }
-
   checkIfHere() {
     var currentLat = this.state.center.lat();;
     var currentLng = this.state.center.lng();
@@ -47,7 +45,6 @@ export default class UserHunt extends Component {
     var boundLatHigh = currentLat - .00040;
     var boundLngLow = currentLng - .00040;
     var boundLngHigh = currentLng + .00040;
-
     if (boundLatLow <= currentLat <= boundLatHigh && boundLngLow <= currentLng && currentLng <= boundLngHigh) {
       console.log("true");
     }
@@ -55,7 +52,6 @@ export default class UserHunt extends Component {
       console.log("false");
     }
   }
-
   componentDidMount() {
     geolocation.getCurrentPosition((position) => {
       this.setState({
@@ -65,15 +61,12 @@ export default class UserHunt extends Component {
         },
         content: `Your Current Location`,
       });
-
       this.setState({
         bounds: this.refs.map.getBounds(),
         center: this.refs.map.getCenter(),
       });
-
       const tick = () => {
         this.setState({ radius: Math.max(this.state.radius - 20, 0) });
-
         if (this.state.radius > 200) {
           raf(tick);
         }
@@ -93,34 +86,28 @@ export default class UserHunt extends Component {
       });
     });
   }
-
   handleBoundsChanged() {
    this.setState({
      bounds: this.refs.map.getBounds(),
      center: this.refs.map.getCenter(),
    });
   }
-
   handlePlacesChanged() {
     const places = this.refs.searchBox.getPlaces();
     const markers = [];
-
     // Add a marker for each place returned from search bar
     places.forEach(function (place) {
       markers.push({
         position: place.geometry.location,
       });
     });
-
     // Set markers; set map center to first search result
     const mapCenter = markers.length > 0 ? markers[0].position : this.state.center;
-
     this.setState({
       center: mapCenter,
       markers,
     });
   }
-
   render() {
     const { center, content, radius } = this.state;
     let contents = [];
@@ -130,7 +117,6 @@ export default class UserHunt extends Component {
         (<InfoWindow key="info" position={center} content={content} />)
       ]);
     }
-
     return (
       <div>
       <Card className="idgaf">

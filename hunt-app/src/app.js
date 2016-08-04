@@ -10,15 +10,23 @@ ReactStormpath.init();
 ReactDOM.render(
   <Router history={createHistory()}>
     <HomeRoute path='/' component={MasterPage}>
+<<<<<<< HEAD
     <IndexRoute component={Landing}>
       <LoginRoute path='/login' component={LoginPage} />
     </IndexRoute>
+=======
+    <IndexRoute path='/landing' component={Landing} />
+    <LoginRoute path='/login' component={LoginPage} />
+>>>>>>> d644fa4c3aa79b3969b182e7a8f533284ee36f75
       <Route path='/createhunt' component={CreateHunt}>
         <Route path='/createclues' component={CreateClues} />
         <Route path='/inviteusers' component={InviteUsers} />
         <Route path='/reviewhunt/:huntname' component={ReviewHunt} />
       </Route>
+<<<<<<< HEAD
       <LoginRoute path='/login' component={LoginPage} />
+=======
+>>>>>>> d644fa4c3aa79b3969b182e7a8f533284ee36f75
       <Route path='/profile' component={ProfilePage} />
       <Route path='/register' component={RegistrationPage} />
       <Route path='/userhunt' component={UserHunt} />
